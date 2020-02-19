@@ -17,7 +17,10 @@ async def flip_coin(ctx):
     await ctx.send(random.choice(['Heads','Tails']))
 @bot.command(name='avg')
 async def avg(ctx,*args: float):
-    await ctx.sendsum(args)/ len(args)
+    await ctx.send(sum(args)/ len(args))
 bot.run(token)
-
+@bot.command(name='roll_dice')
+async def roll_dice(ctx, x):
+    from random import randint
+    await cts.send(randint(1,x))
 
