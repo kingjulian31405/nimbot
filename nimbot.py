@@ -11,10 +11,14 @@ async def play_nim(ctx):
     await ctx.send("Still working on it, kiddo")
 @bot.command(name='flip_coin')
 async def flip_coin(ctx):
-    await ctx.send(randomchoice(['Heads','Tails']))
-
+    import random
+    await ctx.send(random.choice(['Heads', 'Tails']))
+@bot.command(name='avg')
+async def avg(ctx,*args: float):
+    await ctx.send(sum(args)/ len(args))
 bot.run(token)
-
-def random(x):
-    print(x)
+@bot.command(name='roll_dice')
+async def roll_dice(ctx, x):
+    from random import randint
+    await ctx.send(randint(1,x))
 
